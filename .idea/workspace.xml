@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38a9064e-6ecd-4685-8f07-67492e262a1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/StandartOperations/AnyOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/StandartOperations/Interval.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/StandartOperations/Plus/Plus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StandartOperations/Minus/Minus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StandartOperations/Minus/MinusTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StandartOperations/Plus/PlusTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StandartOperations/AnyOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StandartOperations/AnyOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StandartOperations/Interval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StandartOperations/Interval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StandartOperations/Plus/Plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StandartOperations/Plus/Plus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +20,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,6 +44,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,7 +53,16 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="StandartOperations.Minus" />
+      <recent name="StandartOperations.Plus" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Project" />
@@ -60,9 +70,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MinusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StandartOperations.Minus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="StandartOperations.Minus" />
+      <option name="MAIN_CLASS_NAME" value="StandartOperations.Minus.MinusTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StandartOperations.Plus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="StandartOperations.Plus" />
+      <option name="MAIN_CLASS_NAME" value="StandartOperations.Plus.PlusTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlusTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StandartOperations.Plus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="StandartOperations.Plus" />
+      <option name="MAIN_CLASS_NAME" value="StandartOperations.Plus.PlusTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MinusTest" />
+        <item itemvalue="JUnit.PlusTest" />
+        <item itemvalue="JUnit.PlusTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -78,7 +137,8 @@
       <updated>1582279329457</updated>
       <workItem from="1582279333519" duration="582000" />
       <workItem from="1582530397576" duration="143000" />
-      <workItem from="1582530552686" duration="1379000" />
+      <workItem from="1582530552686" duration="1686000" />
+      <workItem from="1582818609545" duration="939000" />
     </task>
     <servers />
   </component>
@@ -86,30 +146,44 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1582531255833">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="533" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1582818889974">
+      <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="533" y="139" key="#com.intellij.ide.util.MemberChooser/0.23.1440.821@0.23.1440.821" timestamp="1582531255833" />
-    <state width="1398" height="210" key="GridCell.Tab.0.bottom" timestamp="1582531789176">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="533" y="139" key="#com.intellij.ide.util.MemberChooser/0.23.1440.822@0.23.1440.822" timestamp="1582818889974" />
+    <state width="1398" height="210" key="GridCell.Tab.0.bottom" timestamp="1582819644830">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state width="1398" height="210" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1582819644830" />
     <state width="1398" height="210" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1582531789176" />
-    <state width="1398" height="210" key="GridCell.Tab.0.center" timestamp="1582531789175">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1398" height="210" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1582819119121" />
+    <state width="1398" height="210" key="GridCell.Tab.0.center" timestamp="1582819644829">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state width="1398" height="210" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1582819644829" />
     <state width="1398" height="210" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1582531789175" />
-    <state width="1398" height="210" key="GridCell.Tab.0.left" timestamp="1582531789175">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1398" height="210" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1582819119120" />
+    <state width="1398" height="210" key="GridCell.Tab.0.left" timestamp="1582819644829">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state width="1398" height="210" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1582819644829" />
     <state width="1398" height="210" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1582531789175" />
-    <state width="1398" height="210" key="GridCell.Tab.0.right" timestamp="1582531789176">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1398" height="210" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1582819119119" />
+    <state width="1398" height="210" key="GridCell.Tab.0.right" timestamp="1582819644829">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state width="1398" height="210" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1582819644829" />
     <state width="1398" height="210" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1582531789176" />
+    <state width="1398" height="210" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1582819119120" />
     <state x="397" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1582279338580">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="397" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.821@0.23.1440.821" timestamp="1582279338580" />
+    <state x="489" y="180" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582818966724">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="489" y="180" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.822@0.23.1440.822" timestamp="1582818670568" />
+    <state x="489" y="180" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.823@0.23.1440.823" timestamp="1582818966724" />
     <state x="385" y="168" key="search.everywhere.popup" timestamp="1582530884224">
       <screen x="0" y="23" width="1440" height="821" />
     </state>

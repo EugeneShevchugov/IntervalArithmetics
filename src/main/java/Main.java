@@ -1,4 +1,5 @@
-import StandartOperations.Interval;
+import StandartOperations.*;
+import StandartOperations.Minus.Minus;
 import StandartOperations.Plus.Plus;
 
 import java.io.BufferedReader;
@@ -25,5 +26,6 @@ public class Main {
         d = Integer.parseInt(s);
         Interval interval = new Interval(a,b,c,d);
         System.out.println("Sum is : " + new Plus().operation(interval));
+        System.out.println("Minus is : " + new Minus().operation(interval));
     }
 }
