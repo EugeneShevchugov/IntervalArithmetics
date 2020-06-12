@@ -26,7 +26,7 @@ public interface Interval {
      * @return Interval
      * @author Evgeny Shevchugov.
      */
-    Interval plus(Interval b);
+    Interval plus(Interval b) throws IllegalIntervalException;
 
     /**
      * Выполняет сложение интервала с числом по принципу : from + number, to + number
@@ -34,7 +34,7 @@ public interface Interval {
      * @return double
      * @author Evgeny Shevchugov.
      */
-    Interval plus(double number);
+    Interval plus(double number) throws IllegalIntervalException;
 
     /**
      * Выполняет вычитание интервала по определенной формуле
@@ -42,7 +42,7 @@ public interface Interval {
      * @return Interval
      * @author Evgeny Shevchugov.
      */
-    Interval minus(Interval b);
+    Interval minus(Interval b) throws IllegalIntervalException;
 
     /**
      * Выполняет вычитание интервала с числом по принципу : from - number, to - number
@@ -50,7 +50,7 @@ public interface Interval {
      * @return double
      * @author Evgeny Shevchugov.
      */
-    Interval minus(double number);
+    Interval minus(double number) throws IllegalIntervalException;
 
     /**
      * Выполняет умножения интервала по определенной формуле
@@ -58,7 +58,7 @@ public interface Interval {
      * @return Interval
      * @author Evgeny Shevchugov.
      */
-    Interval multiply(Interval b);
+    Interval multiply(Interval b) throws IllegalIntervalException;
 
     /**
      * Выполняет умножения интервала с числом по принципу : from * number, to * number
@@ -66,7 +66,7 @@ public interface Interval {
      * @return double
      * @author Evgeny Shevchugov.
      */
-    Interval multiply(double number);
+    Interval multiply(double number) throws IllegalIntervalException;
 
     /**
      * Выполняет вычитание интервала по определенной формуле
@@ -85,7 +85,7 @@ public interface Interval {
      * @throws ZeroDivisionException при неверном аргументе(0)
      * @author Evgeny Shevchugov.
      */
-    Interval division(double number) throws ZeroDivisionException;
+    Interval division(double number) throws ZeroDivisionException, IllegalIntervalException;
 
     /**
      * Метод нахождения середины интервала

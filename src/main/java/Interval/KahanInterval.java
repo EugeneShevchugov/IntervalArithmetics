@@ -1,10 +1,11 @@
 package Interval;
 
 import exceptions.IllegalIntervalException;
+import operations.Ceiling;
 import operations.Interval;
 
 public class KahanInterval extends SimpleInterval {
-    public KahanInterval(double from, double to) {
+    public KahanInterval(double from, double to) throws IllegalIntervalException {
         super(from, to);
     }
 
@@ -26,7 +27,9 @@ public class KahanInterval extends SimpleInterval {
             return new KahanInterval(Double.NaN, Double.NaN);
         }
         if (!isContainsZero(b)) {
-            b = new KahanInterval(1/this.getTo(), 1/b.getTo());
+            double f = 1 / this.getTo();
+            double s = 1 / b.getTo();
+            b = new KahanInterval(Ceiling.ceil(Math.min(f, s)), Ceiling.ceil(Math.max(f, s)));
             return new KahanInterval(this.getFrom(), this.getTo()).multiply(b);
         }
         if (isContainsZero(this) && isContainsZero(b)) {
@@ -36,11 +39,6 @@ public class KahanInterval extends SimpleInterval {
     }
 
     private boolean isContainsZero(Interval interval) {
-        for (int i = (int) interval.getFrom(); i < getTo(); i++) {
-            if (i == 0) {
-                return true;
-            }
-        }
-        return false;
+        return 0 > interval.getFrom() && 0 < interval.getTo();
     }
 }

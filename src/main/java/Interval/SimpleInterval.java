@@ -17,16 +17,20 @@ import java.util.Objects;
  */
 
 public class SimpleInterval implements Interval, Serializable {
-    private double from;
-    private double to;
+    private final double from;
+    private final double to;
 
     /**
      * Базовый Конструктор интервала
+     *
      * @param from - левая граница
      * @param to   - правая граница
      * @author Evgeny Shevchugov.
      */
-    public SimpleInterval(double from, double to) {
+    public SimpleInterval(double from, double to) throws IllegalIntervalException {
+        if (from > to) {
+            throw new IllegalIntervalException();
+        }
         this.from = from;
         this.to = to;
     }
@@ -88,7 +92,7 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval plus(Interval b) {
+    public Interval plus(Interval b) throws IllegalIntervalException {
         return new SimpleInterval(Ceiling.ceil(this.getFrom() + b.getFrom()), Ceiling.ceil(this.getTo() + b.getTo()));
     }
 
@@ -97,7 +101,7 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval plus(double number) {
+    public Interval plus(double number) throws IllegalIntervalException {
         return new SimpleInterval(Ceiling.ceil(this.getFrom() + number), Ceiling.ceil(this.getTo() + number));
     }
 
@@ -106,7 +110,7 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval minus(Interval b) {
+    public Interval minus(Interval b) throws IllegalIntervalException {
         return new SimpleInterval(Ceiling.ceil(this.getFrom() - b.getTo()), Ceiling.ceil(this.getTo() - b.getFrom()));
     }
 
@@ -115,7 +119,7 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval minus(double number) {
+    public Interval minus(double number) throws IllegalIntervalException {
         return new SimpleInterval(Ceiling.ceil(this.getFrom() - number), Ceiling.ceil(this.getTo() - number));
     }
 
@@ -124,8 +128,10 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval multiply(Interval b) {
-        return new SimpleInterval(Ceiling.ceil(Math.min(Math.min(Math.min(this.getFrom() * b.getFrom(), this.getFrom() * b.getTo()), this.getTo() * b.getFrom()), this.getTo() * b.getTo())), Ceiling.ceil(Math.max(Math.max(Math.max(this.getFrom() * b.getFrom(), this.getFrom() * b.getTo()), this.getTo() * b.getFrom()), this.getTo() * b.getTo())));
+    public Interval multiply(Interval b) throws IllegalIntervalException {
+        Interval f = this.multiply(b.getFrom());
+        Interval s = this.multiply(b.getTo());
+        return new SimpleInterval(Ceiling.ceil(Math.min(f.getFrom(), s.getFrom())), Ceiling.ceil(Math.max(f.getTo(), s.getTo())));
     }
 
     /**
@@ -133,8 +139,10 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval multiply(double number) {
-        return new SimpleInterval(Ceiling.ceil(this.getFrom() * number), Ceiling.ceil(this.getTo() * number));
+    public Interval multiply(double number) throws IllegalIntervalException {
+        double f = this.getFrom() * number;
+        double s = this.getTo() * number;
+        return new SimpleInterval(Ceiling.ceil(Math.min(f, s)), Ceiling.ceil(Math.max(f, s)));
     }
 
     /**
@@ -143,8 +151,10 @@ public class SimpleInterval implements Interval, Serializable {
      */
     @Override
     public Interval division(Interval b) throws ZeroDivisionException, IllegalIntervalException {
-//        if (b.getFrom() == 0 || b.getTo() == 0) throw new ZeroDivisionException("Деление границы интервала на 0");
-        return new SimpleInterval(Ceiling.ceil(Math.min(Math.min(Math.min(this.getFrom() / b.getFrom(), this.getFrom() / b.getTo()), this.getTo() / b.getFrom()), this.getTo() / b.getTo())), Ceiling.ceil(Math.max(Math.max(Math.max(this.getFrom() / b.getFrom(), this.getFrom() / b.getTo()), this.getTo() / b.getFrom()), this.getTo() / b.getTo())));
+        if (b.getFrom() == 0 || b.getTo() == 0) throw new ZeroDivisionException("Деление границы интервала на 0");
+        Interval f = this.division(b.getFrom());
+        Interval s = this.division(b.getTo());
+        return new SimpleInterval(Ceiling.ceil(Math.min(f.getFrom(), s.getFrom())), Ceiling.ceil(Math.max(f.getTo(), s.getTo())));
     }
 
     /**
@@ -152,9 +162,11 @@ public class SimpleInterval implements Interval, Serializable {
      * @see Interval
      */
     @Override
-    public Interval division(double number) throws ZeroDivisionException {
+    public Interval division(double number) throws ZeroDivisionException, IllegalIntervalException {
         if (number == 0) throw new ZeroDivisionException("Деление границы интервала на 0");
-        return new SimpleInterval(Ceiling.ceil(this.getFrom() / number), Ceiling.ceil(this.getTo() / number));
+        double f = this.getFrom() / number;
+        double s = this.getTo() / number;
+        return new SimpleInterval(Ceiling.ceil(Math.min(f, s)), Ceiling.ceil(Math.max(f, s)));
     }
 
     /**
