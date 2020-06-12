@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38a9064e-6ecd-4685-8f07-67492e262a1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interval/KahanInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interval/KahanInterval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interval/SimpleInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interval/SimpleInterval.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StandartOperations/AnyOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StandartOperations/Interval.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StandartOperations/Minus/Minus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/StandartOperations/Plus/Plus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StandartOperations/Minus/MinusTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StandartOperations/Plus/PlusTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +62,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Interval Arithmetics" />
       <method v="2">
         <option name="MakeProject" enabled="true" />
       </method>
@@ -121,6 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MinusTest" />
+      <item itemvalue="JUnit.PlusTest" />
+      <item itemvalue="JUnit.PlusTest.test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -151,26 +149,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="396" y="85" key="#Main" timestamp="1591971748156">
+    <state x="396" y="85" key="#Main" timestamp="1591972096005">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state x="396" y="85" key="#Main/0.23.1440.804@0.23.1440.804" timestamp="1591971748156" />
-    <state width="1398" height="202" key="GridCell.Tab.0.bottom" timestamp="1591971750025">
+    <state x="396" y="85" key="#Main/0.23.1440.804@0.23.1440.804" timestamp="1591972096005" />
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591972146748">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="202" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1591971750025" />
-    <state width="1398" height="202" key="GridCell.Tab.0.center" timestamp="1591971750025">
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.804@0.23.1440.804" timestamp="1591972146748" />
+    <state width="1398" height="202" key="GridCell.Tab.0.bottom" timestamp="1591972148767">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="202" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1591971750025" />
-    <state width="1398" height="202" key="GridCell.Tab.0.left" timestamp="1591971750024">
+    <state width="1398" height="202" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1591972148767" />
+    <state width="1398" height="202" key="GridCell.Tab.0.center" timestamp="1591972148766">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="202" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1591971750024" />
-    <state width="1398" height="202" key="GridCell.Tab.0.right" timestamp="1591971750025">
+    <state width="1398" height="202" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1591972148766" />
+    <state width="1398" height="202" key="GridCell.Tab.0.left" timestamp="1591972148766">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="202" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1591971750025" />
+    <state width="1398" height="202" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1591972148766" />
+    <state width="1398" height="202" key="GridCell.Tab.0.right" timestamp="1591972148767">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state width="1398" height="202" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1591972148767" />
     <state width="1398" height="251" key="GridCell.Tab.1.bottom" timestamp="1591971681545">
       <screen x="0" y="23" width="1440" height="804" />
     </state>

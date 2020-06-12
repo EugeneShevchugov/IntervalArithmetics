@@ -10,8 +10,8 @@ public class Ceiling {
 
     public static double ceil(double x) {
         x = x * 1000;
-        int i = (int) Math.round(x);
-        x = (double) i / 1000;
+        double i = Math.round(x);
+        x = i / 1000;
         return x;
     }
 }
