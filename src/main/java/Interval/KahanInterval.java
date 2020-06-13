@@ -41,4 +41,11 @@ public class KahanInterval extends SimpleInterval {
     private boolean isContainsZero(Interval interval) {
         return 0 > interval.getFrom() && 0 < interval.getTo();
     }
+
+    @Override
+    public Interval multiply(Interval b) throws IllegalIntervalException {
+        Interval f = this.multiply(b.getFrom());
+        Interval s = this.multiply(b.getTo());
+        return new KahanInterval(Ceiling.ceil(Math.min(f.getFrom(), s.getFrom())), Ceiling.ceil(Math.max(f.getTo(), s.getTo())));
+    }
 }

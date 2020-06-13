@@ -1,102 +1,50 @@
-//package Interval;
-//
-//import exceptions.IllegalIntervalException;
-//import exceptions.ZeroDivisionException;
-//import operations.Interval;
-//import org.junit.jupiter.api.Test;
-//
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//class SimpleIntervalTest {
-//    SimpleInterval f_interval;
-//    SimpleInterval s_interval;
-//    {
-//        try {
-//            f_interval = new SimpleInterval(10, 20);
-//            s_interval = new SimpleInterval(20, 30);
-//        } catch (IllegalIntervalException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    @Test
-//    public void sumWithInterval() throws IllegalIntervalException {
-//        Interval test = f_interval.plus(s_interval);
-//        assertEquals(test, new SimpleInterval(30, 50));
-//    }
-//
-//    @Test
-//    public void sumWithNumber() throws IllegalIntervalException {
-//        Interval test = f_interval.plus(50);
-//        assertEquals(test, new SimpleInterval(60, 70));
-//    }
-//
-//    @Test
-//    public void minusWithInterval() throws IllegalIntervalException {
-//        Interval test = f_interval.minus(s_interval);
-//        assertEquals(test, new SimpleInterval(-20,0));
-//    }
-//
-//    @Test
-//    public void minusWithNumber() throws IllegalIntervalException {
-//        Interval test = f_interval.minus(10);
-//        assertEquals(test, new SimpleInterval(0, 10));
-//    }
-//
-//    @Test
-//    public void multiplyWithInterval() throws IllegalIntervalException {
-//        Interval test = f_interval.multiply(s_interval);
-//        assertEquals(test, new SimpleInterval(200, 600));
-//    }
-//
-//    @Test
-//    public void multiplyWithNumber() throws IllegalIntervalException {
-//        Interval test = f_interval.multiply(5);
-//        assertEquals(test, new SimpleInterval(50, 100));
-//    }
-//
-//    @Test
-//    public void divisionWithInterval() throws IllegalIntervalException, ZeroDivisionException {
-//        Interval test = f_interval.division(s_interval);
-//        assertEquals(test, new SimpleInterval(0.333, 1));
-//    }
-//
-//    @Test
-//    public void divisionWithNumber() {
-//        try {
-//            Interval test = f_interval.division(5);
-//            assertEquals(test, new SimpleInterval(2, 4));
-//        } catch (ZeroDivisionException | IllegalIntervalException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    @Test
-//    public void middleTest() {
-//        assertEquals(15, f_interval.middle());
-//    }
-//
-//    @Test
-//    public void widthTest() {
-//        assertEquals(10, f_interval.width());
-//    }
-//
-//    @Test
-//    public void radiusTest() {
-//        assertEquals(5, f_interval.radius());
-//    }
-//
-//    @Test
-//    public void magnitudeTest() {
-//        assertEquals(20, f_interval.magnitude());
-//    }
-//
-//    @Test
-//    public void mignitudeTest() {
-//        assertEquals(10, f_interval.mignitude());
-//    }
-//
-//    @Test
-//    public void deviationTest() {
-//        assertEquals(20, f_interval.deviation());
-//    }
-//}
+package Interval;
+
+import exceptions.IllegalIntervalException;
+import exceptions.ZeroDivisionException;
+import operations.Interval;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SimpleIntervalTest {
+    @Test
+    public void arithmeticNumbersTest() throws IllegalIntervalException, ZeroDivisionException {
+        Interval a = new SimpleInterval(5, 10);
+        assertEquals(a.plus(5), new SimpleInterval(10, 15));
+        assertEquals(a.minus(5), new SimpleInterval(0, 5));
+        assertEquals(a.multiply(5), new SimpleInterval(25, 50));
+        assertEquals(a.division(5), new SimpleInterval(1, 2));
+    }
+
+    @Test
+    public void characteristicOpsTest() throws IllegalIntervalException {
+        Interval a = new SimpleInterval(5, 10);
+        assertEquals(a.middle(), 7.5);
+        assertEquals(a.width(), 5);
+        assertEquals(a.radius(), 2.5);
+        assertEquals(a.magnitude(), 10);
+        assertEquals(a.mignitude(), 5);
+        assertEquals(a.deviation(), 10);
+    }
+
+    @Test
+    public void typeTest() throws IllegalIntervalException {
+        Interval a = new SimpleInterval(5, 10);
+        assertEquals(a.getType(), SimpleInterval.class.getName() + "." + "NON_NEGATIVE_INTERVAL");
+        a = new SimpleInterval(-5, 0);
+        assertEquals(a.getType(), SimpleInterval.class.getName() + "." + "ZERO_CONTAINS_INTERVAL");
+        a = new SimpleInterval(-5, 5);
+        assertEquals(a.getType(), SimpleInterval.class.getName() + "." + "BALANCED");
+    }
+
+    @Test
+    public void intervalOpsTest() throws IllegalIntervalException, ZeroDivisionException {
+        Interval a = new SimpleInterval(5, 10);
+        Interval b = new SimpleInterval(15, 40);
+        assertEquals(a.plus(b), new SimpleInterval(20, 50));
+        assertEquals(a.minus(b), new SimpleInterval(-35, -5));
+        assertEquals(a.multiply(b), new SimpleInterval(75, 400));
+        assertEquals(a.division(b), new SimpleInterval(0.125, 0.667));
+    }
+}
